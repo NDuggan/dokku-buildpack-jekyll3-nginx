@@ -19,7 +19,7 @@ function indent() {
   esac
 }
 
-if [[ `ruby -v` == "ruby 1"* ]]; then
+#if [[ `ruby -v` == "ruby 1"* ]]; then
   echo "-----> Installing Ruby 2.6.3"
   git clone https://github.com/sstephenson/rbenv.git ~/.rbenv
   git clone https://github.com/garnieretienne/rvm-download.git ~/.rbenv/plugins/rvm-download
@@ -28,9 +28,9 @@ if [[ `ruby -v` == "ruby 1"* ]]; then
   rbenv rehash
   rbenv local 2.6.3
   rbenv global 2.6.3
-else
+#else
   echo "-----> Using `ruby -v`"
-fi
+#fi
 
 # build nginx config unless overridden by user
 if [ ! -f $BUILD_DIR/conf/nginx.conf ]; then
